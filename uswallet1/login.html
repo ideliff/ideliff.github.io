@@ -107,7 +107,7 @@ article#button {
     }
 
     function onload_event(){
-        returnURL = getQueryVariable("merchant");
+        returnURL = getQueryVariable("callback");
         
         if( returnURL === false) {
             var oldURL = document.referrer;
