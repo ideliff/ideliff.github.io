@@ -1,0 +1,35 @@
+{
+    "applinks" : {
+                    "apps" : [],
+                    "details" : {
+                                    "U9JAU6F5W4.com.mastercard.test.anybank" : {
+                                        "paths" : [
+                                                   "/anybank/testanybank1.jsp",
+                                            ]
+                                    },
+                                    "U9JAU6F5W4.com.mastercard.test.acmebank" : {
+                                            "paths" : [
+                                                    "/acmebank/testacmebank1.jsp",
+                                            ]
+                                    },
+                                    "U9JAU6F5W4.com.mastercard.uswallet1" : {
+                                            "paths" : [
+                                                    "/uswallet1/testUsWallet1.jsp",
+                                                    "/uswallet1/*"
+                                            ]
+                                    },
+                                    "U9JAU6F5W4.com.mastercard.uswallet2" : {
+                                            "paths" : [
+                                                    "/uswallet2/testUsWallet2.jsp",
+                                                    "/uswallet2/*"
+                                            ]
+                                    },
+                                    "U9JAU6F5W4.com.mastercard.canadawallet" : {
+                                            "paths" : [
+                                                    "/canadawallet/testCanadaWallet.jsp",
+                                                    "/canadawallet/*"
+                                            ]
+                                    }
+                        }
+            }
+}
