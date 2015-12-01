@@ -95,14 +95,6 @@ article#button {
         window.location.href = returnURL + "?action=paymentdone&wallet=USWallet1";
     }
 
-    function getURL(url) {
-        var urlpaths = url.split("?");
-        var vars = urlpaths[0].split("/");
-        vars.splice(vars.length -1, 1);
-        var finalURL = vars.join("/");
-        return finalURL;
-    }
-
     function onload_event(){
         returnURL = getQueryVariable("callback");
         if( returnURL === false) {
