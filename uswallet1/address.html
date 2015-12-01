@@ -107,7 +107,10 @@ p {
     
     function pay_clicked()
     {
-        window.location.href = "/cards.html?callback=" + returnURL;
+        
+        var finalURL = getURL(document.URL);
+        finalURL = finalURL + "/cards.html?callback=" + returnURL;
+        window.location.href = finalURL;
     }
 
     function getURL(url) {

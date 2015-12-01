@@ -104,7 +104,9 @@ article#button {
     function proceed_clicked()
     {
         //window.location.href = returnURL + "?action=paymentdone&wallet=USWallet1";
-        window.location.href = "/address.html?callback=" + returnURL;
+        var finalURL = getURL(document.URL);
+        finalURL = finalURL + "/address.html?callback=" + returnURL;
+        window.location.href = finalURL;
     }
 
     function onload_event(){
