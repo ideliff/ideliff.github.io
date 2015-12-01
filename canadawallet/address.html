@@ -90,7 +90,7 @@ p {
     
 
     <article id="button" onclick="return pay_clicked()">
-        <h2> Next </h2>
+        <h2> Proceed </h2>
     </article>
     
 </article>
@@ -107,8 +107,9 @@ p {
     
     function pay_clicked()
     {
+        
         var finalURL = getURL(document.URL);
-        finalURL = finalURL + "/login.html?callback=" + returnURL;
+        finalURL = finalURL + "/cards.html?callback=" + returnURL;
         window.location.href = finalURL;
     }
 

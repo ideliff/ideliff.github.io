@@ -57,6 +57,14 @@ article#button {
     color:white;
 }
 
+
+#textboxid
+{
+    height:100px;
+    font-size:40pt;
+    align
+}
+
 </style>
 
 </head>
@@ -68,18 +76,21 @@ article#button {
 </header>
 
 <section>
-<h2>Selected Card</h2>
+<h2>Authentication</h2>
 
 <article>
     
-    <img src="credit-card.jpg">
+    <form align="center">
+        <br><br>
+        <input id="textboxid" type="text" name="username" placeholder="User Name"><br><br>
+        <input id ="textboxid" type="password" name="password" placeholder="Password"><br><br>
+    </form>
 
-    <article id="button" onclick="return pay_clicked()">
-        <h2> Pay </h2>
+    <article id="button" onclick="return proceed_clicked()">
+        <h2> Proceed </h2>
     </article>
     
 </article>
-
 </section>
 
 <footer>
@@ -90,10 +101,11 @@ article#button {
 <script>
     var returnURL;
     
-    function pay_clicked()
+    function proceed_clicked()
     {
+        //window.location.href = returnURL + "?action=paymentdone&wallet=USWallet1";
         var finalURL = getURL(document.URL);
-        finalURL = finalURL + "/login.html?callback=" + returnURL;
+        finalURL = finalURL + "/address.html?callback=" + returnURL;
         window.location.href = finalURL;
     }
 
@@ -105,8 +117,10 @@ article#button {
         return finalURL;
     }
 
+
     function onload_event(){
         returnURL = getQueryVariable("callback");
+        
         if( returnURL === false) {
             var oldURL = document.referrer;
             returnURL = oldURL;
@@ -116,7 +130,6 @@ article#button {
     function getQueryVariable(variable)
     {
         var query = window.location.search.substring(1);
-        //var query = "x=abc&y=def&z=pqr&n=123";
         var vars = query.split("&");
         for (var i=0;i<vars.length;i++) {
             var pair = vars[i].split("=");
