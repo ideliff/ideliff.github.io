@@ -105,8 +105,8 @@ article#button {
     function proceed_clicked()
     {
         //window.location.href = returnURL + "?action=paymentdone&wallet=USWallet1";
-        var finalURL = getURL(document.URL);
-        finalURL = finalURL + "/uswallet1/index.html?callback=" + returnURL;
+        //var finalURL = getURL(document.URL);
+        var finalURL =  "https://ideliff.github.io/" + wallet + "/index.html?callback=" + returnURL;
         alert(finalURL);
         window.location.href = finalURL;
     }
