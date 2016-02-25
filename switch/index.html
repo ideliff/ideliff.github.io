@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>US Wallet 2</title>
+<title>Lightbox</title>
 
 <style>
 body {
@@ -57,8 +57,12 @@ article#button {
     color:white;
 }
 
-p {
-    text-align:center;
+
+#textboxid
+{
+    height:100px;
+    font-size:40pt;
+    align
 }
 
 </style>
@@ -68,33 +72,25 @@ p {
 <body onload="onload_event()">
 
 <header>
-    <h1>US Wallet 2</h1>
+    <h1>Lightbox</h1>
 </header>
 
 <section>
-<h2>Selected Address</h2>
+<h2>Authentication</h2>
 
 <article>
     
-    <h2> Address 1: </h2>
-    <p> MEGASYSTEMS INC <br>
-    799 E DRAGRAM SUITE 5A <br>
-    TUCSON AZ 85705 <br>
-    USA</p>
-    
-    <h2> Address 2:</h2>
-    <p> 100 MAIN ST<br>
-    PO BOX 1022<br>
-    SEATTLE WA 98104<br>
-    USA</p>
-    
+    <form align="center">
+        <br><br>
+        <input id="textboxid" type="text" name="username" placeholder="User Name"><br><br>
+        <input id ="textboxid" type="password" name="password" placeholder="Password"><br><br>
+    </form>
 
-    <article id="button" onclick="return pay_clicked()">
+    <article id="button" onclick="return proceed_clicked()">
         <h2> Proceed </h2>
     </article>
     
 </article>
-
 </section>
 
 <footer>
@@ -105,11 +101,11 @@ p {
 <script>
     var returnURL;
     
-    function pay_clicked()
+    function proceed_clicked()
     {
-        
+        //window.location.href = returnURL + "?action=paymentdone&wallet=USWallet1";
         var finalURL = getURL(document.URL);
-        finalURL = finalURL + "/cards.html?callback=" + returnURL;
+        finalURL = finalURL + "../uswallet1/index.html?callback=" + returnURL;
         window.location.href = finalURL;
     }
 
@@ -121,8 +117,10 @@ p {
         return finalURL;
     }
 
+
     function onload_event(){
         returnURL = getQueryVariable("callback");
+        
         if( returnURL === false) {
             var oldURL = document.referrer;
             returnURL = oldURL;
@@ -132,7 +130,6 @@ p {
     function getQueryVariable(variable)
     {
         var query = window.location.search.substring(1);
-        //var query = "x=abc&y=def&z=pqr&n=123";
         var vars = query.split("&");
         for (var i=0;i<vars.length;i++) {
             var pair = vars[i].split("=");
