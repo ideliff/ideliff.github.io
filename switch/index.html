@@ -107,7 +107,6 @@ article#button {
         //window.location.href = returnURL + "?action=paymentdone&wallet=USWallet1";
         //var finalURL = getURL(document.URL);
         var finalURL =  "https://ideliff.github.io/" + wallet + "/index.html?callback=" + returnURL;
-        alert(finalURL);
         window.location.href = finalURL;
     }
 
@@ -116,17 +115,13 @@ article#button {
         var vars = urlpaths[0].split("/");
         vars.splice(vars.length -1, 3);
         var finalURL = vars.join("/");
-        alert(finalURL);
         return finalURL;
     }
 
 
     function onload_event(){
-        alert("1");
         returnURL = getQueryVariable("callback");
-                alert("2");
         wallet = getQueryVariable("wallet");
-                alert("3");
         
         if( returnURL === false) {
             var oldURL = document.referrer;
