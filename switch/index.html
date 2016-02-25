@@ -100,26 +100,30 @@ article#button {
 </body>
 <script>
     var returnURL;
+    var wallet;
     
     function proceed_clicked()
     {
         //window.location.href = returnURL + "?action=paymentdone&wallet=USWallet1";
         var finalURL = getURL(document.URL);
-        finalURL = finalURL + "../uswallet1/index.html?callback=" + returnURL;
+        finalURL = finalURL + "/uswallet1/index.html?callback=" + returnURL;
+        alert(finalURL);
         window.location.href = finalURL;
     }
 
     function getURL(url) {
         var urlpaths = url.split("?");
         var vars = urlpaths[0].split("/");
-        vars.splice(vars.length -1, 1);
+        vars.splice(vars.length -1, 2);
         var finalURL = vars.join("/");
+        alert(finalURL);
         return finalURL;
     }
 
 
     function onload_event(){
         returnURL = getQueryVariable("callback");
+        wallet = getQueryVariable("wallet");
         
         if( returnURL === false) {
             var oldURL = document.referrer;
