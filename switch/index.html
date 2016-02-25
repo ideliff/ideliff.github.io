@@ -114,7 +114,7 @@ article#button {
     function getURL(url) {
         var urlpaths = url.split("?");
         var vars = urlpaths[0].split("/");
-        vars.splice(vars.length -1, 2);
+        vars.splice(vars.length -1, 3);
         var finalURL = vars.join("/");
         alert(finalURL);
         return finalURL;
