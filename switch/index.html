@@ -122,8 +122,11 @@ article#button {
 
 
     function onload_event(){
+        alert("1");
         returnURL = getQueryVariable("callback");
+                alert("2");
         wallet = getQueryVariable("wallet");
+                alert("3");
         
         if( returnURL === false) {
             var oldURL = document.referrer;
